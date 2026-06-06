@@ -4,97 +4,345 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio - Phanuel Kamga</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-html{scroll-behavior:smooth}
-body{background:linear-gradient(135deg,#0b3d0b,#146c43,#1faa59);color:#fff}
-.navbar{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:18px 30px;background:rgba(0,0,0,.25);backdrop-filter:blur(10px);z-index:1000}
-.nav-links{display:flex;gap:18px;list-style:none}
-.nav-links a{color:#fff;text-decoration:none}
-section{padding:100px 20px}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
-.profile{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #fff}
-.card{background:rgba(255,255,255,.1);padding:20px;border-radius:16px;backdrop-filter:blur(6px)}
-.btn{display:inline-block;margin:10px;padding:10px 18px;background:#111;color:#fff;text-decoration:none;border-radius:8px}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.project img{width:100%;height:180px;object-fit:cover;border-radius:10px}
-.contact{display:flex;flex-wrap:wrap;gap:20px}
-input,textarea{width:100%;padding:10px;margin:5px 0;border-radius:8px;border:none}
-footer{text-align:center;padding:20px;background:rgba(0,0,0,.2)}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif
+}
+
+html{
+scroll-behavior:smooth
+}
+
+body{
+background:linear-gradient(135deg,#0b3d0b,#146c43,#1faa59);
+color:#fff
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:18px 30px;
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(10px);
+z-index:1000
+}
+
+.nav-links{
+display:flex;
+gap:18px;
+list-style:none
+}
+
+.nav-links a{
+color:#fff;
+text-decoration:none
+}
+
+section{
+padding:100px 20px
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center
+}
+
+.profile{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #fff
+}
+
+.card{
+background:rgba(255,255,255,.1);
+padding:20px;
+border-radius:16px;
+backdrop-filter:blur(6px)
+}
+
+.btn{
+display:inline-block;
+margin:10px 5px;
+padding:10px 18px;
+background:#111;
+color:#fff;
+text-decoration:none;
+border:none;
+border-radius:8px;
+cursor:pointer
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px
+}
+
+.project img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px
+}
+
+.contact{
+display:flex;
+flex-wrap:wrap;
+gap:20px
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
+border-radius:8px;
+border:none
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,.2)
+}
+
+.form-project{
+margin-top:20px;
+display:grid;
+gap:10px
+}
+
 </style>
 </head>
+
 <body>
 
 <header class="navbar">
 <h3>Phanuel Kamga</h3>
+
 <ul class="nav-links">
 <li><a href="#home">Accueil</a></li>
 <li><a href="#about">À propos</a></li>
 <li><a href="#projects">Projets</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </header>
 
 <section id="home" class="hero">
+
 <div>
+
 <img src="photo-profil.jpg" class="profile" alt="Photo de profil">
+
 <h1>Phanuel Kamga</h1>
-<p>Création de sites web, applications mobiles, UI/UX, HTML, CSS, JavaScript et Python.</p>
-<p><small>Pour changer la photo, remplace simplement le fichier "photo-profil.jpg".</small></p>
+
+<p>
+Création de sites web, applications mobiles,
+UI/UX, HTML, CSS, JavaScript et Python.
+</p>
+
+<p>
+<small>
+Pour changer la photo,
+remplace simplement "photo-profil.jpg"
+</small>
+</p>
+
 </div>
+
 </section>
 
 <section id="about">
+
 <div class="card">
+
 <h2>À propos</h2>
-<p>Passionné par le développement web et mobile, la résolution de problèmes et la création d'interfaces modernes.</p>
+
+<p>
+Passionné par le développement web et mobile,
+la résolution de problèmes et la création
+d'interfaces modernes.
+</p>
+
 </div>
+
 </section>
 
 <section id="projects">
+
 <h2>Mes Projets</h2>
-<div class="projects">
+
+<div class="projects" id="projectsContainer">
 
 <div class="card project">
+
 <img src="https://picsum.photos/600/400" alt="Projet">
+
 <h3>Projet Exemple</h3>
+
 <p>Description du projet.</p>
-<a class="btn" href="https://example.com" target="_blank">Démo</a>
-<a class="btn" href="https://github.com" target="_blank">Code</a>
-</div>
+
+<a class="btn" href="#" target="_blank">
+Démo
+</a>
+
+<a class="btn" href="#" target="_blank">
+Code
+</a>
 
 </div>
 
-<div class="card" style="margin-top:20px">
-<h3>Ajouter un nouveau projet</h3>
-<p>Duplique simplement le bloc &lt;div class="card project"&gt;...&lt;/div&gt; et remplace :</p>
-<ul>
-<li>l'image dans src=""</li>
-<li>le titre</li>
-<li>la description</li>
-<li>le lien Démo</li>
-<li>le lien Code</li>
-</ul>
 </div>
+
+<div class="card form-project">
+
+<h3>Ajouter un projet</h3>
+
+<input id="title" placeholder="Titre du projet">
+
+<input id="description"
+placeholder="Description">
+
+<input id="image"
+placeholder="Lien image">
+
+<input id="demo"
+placeholder="Lien Démo">
+
+<input id="code"
+placeholder="Lien Code">
+
+<button class="btn"
+onclick="addProject()">
+
+Ajouter Projet
+
+</button>
+
+</div>
+
 </section>
 
 <section id="contact">
+
 <div class="card contact">
+
 <div>
+
 <h2>Contact</h2>
+
 <p>📞 673936110</p>
+
 <p>✉️ kamgaphanuel@gmail.com</p>
+
 </div>
+
 <div style="flex:1;min-width:250px">
+
 <input placeholder="Nom">
-<input placeholder="Email">
-<textarea rows="5" placeholder="Message"></textarea>
+
+<input type="email"
+placeholder="Email">
+
+<textarea rows="5"
+placeholder="Message"></textarea>
+
+<button class="btn">
+Envoyer
+</button>
+
 </div>
+
 </div>
+
 </section>
 
-<footer>© 2026 Phanuel Kamga - Tous droits réservés</footer>
+<footer>
+
+© 2026 Phanuel Kamga -
+Tous droits réservés
+
+</footer>
+
+<script>
+
+function addProject(){
+
+let title =
+document.getElementById("title").value;
+
+let description =
+document.getElementById("description").value;
+
+let image =
+document.getElementById("image").value;
+
+let demo =
+document.getElementById("demo").value;
+
+let code =
+document.getElementById("code").value;
+
+if(title === ""){
+alert("Ajoute un titre");
+return;
+}
+
+document
+.getElementById("projectsContainer")
+.innerHTML += `
+
+<div class="card project">
+
+<img src="${image}" alt="Projet">
+
+<h3>${title}</h3>
+
+<p>${description}</p>
+
+<a class="btn"
+href="${demo}"
+target="_blank">
+
+Démo
+
+</a>
+
+<a class="btn"
+href="${code}"
+target="_blank">
+
+Code
+
+</a>
+
+</div>
+
+`;
+
+document
+.querySelectorAll(".form-project input")
+.forEach(input=>input.value="");
+
+}
+
+</script>
+
 </body>
 </html>
