@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Phanuel Kamga | Portfolio</title>
+<title>Phanuel Kamga Portfolio</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <style>
 
 :root{
---bg:#0b1020;
---card:rgba(255,255,255,.08);
 --green:#1faa59;
---text:#ffffff;
---shadow:0 8px 25px rgba(0,0,0,.25);
+--bg:#071019;
+--glass:rgba(255,255,255,.08);
 }
 
 *{
@@ -31,248 +31,402 @@ scroll-behavior:smooth;
 }
 
 body{
-background:
-linear-gradient(
-135deg,
-#071014,
-#0f3d2f,
-#0c7a4b
-);
-
-color:var(--text);
-}
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-backdrop-filter:blur(14px);
-background:rgba(0,0,0,.25);
-z-index:1000;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:20px;
-}
-
-nav a{
+background:var(--bg);
 color:white;
-text-decoration:none;
+overflow-x:hidden;
 }
 
-section{
-padding:110px 8%;
-}
+/* loader */
 
-.hero{
-min-height:100vh;
+.loader{
+position:fixed;
+inset:0;
+background:#071019;
 display:flex;
 justify-content:center;
 align-items:center;
+font-size:2rem;
+font-weight:700;
+z-index:9999;
+animation:fadeout 1s forwards;
+animation-delay:2s;
+}
+
+@keyframes fadeout{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* particles */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+}
+
+/* aurora */
+
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 30%,#1faa5940,transparent),
+radial-gradient(circle at 80% 20%,#00ffee20,transparent),
+radial-gradient(circle at 50% 90%,#ffffff15,transparent);
+
+filter:blur(80px);
+
+animation:move 10s infinite alternate;
+}
+
+@keyframes move{
+
+from{
+transform:translateY(-50px);
+}
+
+to{
+transform:translateY(50px);
+}
+
+}
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(20px);
+
+z-index:999;
+
+}
+
+nav ul{
+
+display:flex;
+gap:20px;
+list-style:none;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
 text-align:center;
+
 }
 
 .glass{
-background:var(--card);
-backdrop-filter:blur(10px);
-border-radius:20px;
-padding:35px;
-box-shadow:var(--shadow);
-}
 
-.profile-wrapper{
-position:relative;
-display:inline-block;
+background:var(--glass);
+
+padding:40px;
+
+border-radius:25px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+
 }
 
 .profile{
-width:180px;
-height:180px;
+
+width:190px;
+height:190px;
+
 border-radius:50%;
+
 object-fit:cover;
+
 border:5px solid white;
-cursor:pointer;
+
+transition:.6s;
+
 }
 
-.upload-btn{
-display:block;
-margin-top:12px;
+.profile:hover{
+
+transform:
+rotateY(180deg)
+scale(1.08);
+
 }
 
 .btn{
+
+padding:12px 24px;
+
 border:none;
-padding:12px 20px;
-border-radius:10px;
-cursor:pointer;
+
+border-radius:12px;
+
 background:var(--green);
+
 color:white;
-margin:5px;
+
+cursor:pointer;
+
+margin-top:12px;
+
 }
 
 .grid{
+
 display:grid;
+
 grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
 }
 
 .card{
-padding:20px;
-border-radius:16px;
-background:var(--card);
-backdrop-filter:blur(10px);
+
+background:var(--glass);
+
+padding:25px;
+
+border-radius:20px;
+
+transition:.5s;
+
+transform-style:preserve-3d;
+
 }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
+.card:hover{
+
+transform:
+
+translateY(-10px)
+
+rotateX(5deg)
+
+rotateY(-5deg);
+
 }
 
 .skill{
-padding:10px 15px;
-background:#ffffff20;
-border-radius:50px;
+
+margin-top:20px;
+
 }
 
-input,textarea{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-margin-top:10px;
+.bar{
+
+height:10px;
+
+background:#ffffff20;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.fill{
+
+height:100%;
+
+background:var(--green);
+
 }
 
 .project img{
+
 width:100%;
 height:180px;
+
 object-fit:cover;
-border-radius:10px;
+
+border-radius:12px;
+
 }
 
-.stats{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
+.hidden{
+
+opacity:0;
+
+transform:translateY(100px);
+
+transition:1s;
+
 }
 
-.stat{
-text-align:center;
-padding:20px;
+.show{
+
+opacity:1;
+
+transform:none;
+
 }
 
-.top-btn{
+.cursor{
+
 position:fixed;
-right:20px;
-bottom:20px;
-padding:12px;
+
+width:20px;
+
+height:20px;
+
+border:2px solid white;
+
 border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:99999;
+
+}
+
+.top{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
 display:none;
+
 }
 
-footer{
-padding:40px;
-text-align:center;
+input,textarea{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:10px;
+
 }
 
-@media(max-width:700px){
+@media(max-width:800px){
 
 nav ul{
+
 display:none;
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+<div class="loader">
+
+Portfolio Loading...
+
+</div>
+
+<div id="particles-js"></div>
+
+<div class="bg"></div>
+
+<div class="cursor"></div>
+
 <nav>
 
-<h2>Phanuel Kamga</h2>
+<h2>Phanuel</h2>
 
 <ul>
 
-<li><a href="#home">Accueil</a></li>
-<li><a href="#about">À propos</a></li>
-<li><a href="#skills">Compétences</a></li>
-<li><a href="#projects">Projets</a></li>
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
 <li><a href="#contact">Contact</a></li>
 
 </ul>
 
 </nav>
 
-<section id="home" class="hero">
+<section class="hero">
 
-<div class="glass">
-
-<div class="profile-wrapper">
+<div class="glass hidden">
 
 <img
-id="profilePreview"
+
+id="profile"
+
 class="profile"
-src="https://i.ibb.co/21HVWMpG/199371.jpg"
->
+
+src="https://i.ibb.co/21HVWMpG/199371.jpg">
+
+<br>
 
 <input
-type="file"
-id="profileInput"
+
 hidden
-accept="image/*">
+
+type="file"
+
+accept="image/*"
+
+id="photo">
 
 <button
-class="btn upload-btn"
-onclick="document.getElementById('profileInput').click()">
 
-Choisir une photo
+class="btn"
+
+onclick="photo.click()">
+
+Changer Photo
 
 </button>
 
-</div>
-
-<h1>Phanuel Kamga</h1>
+<h1 id="typing"></h1>
 
 <p>
 
-Développeur Web • UI/UX • HTML • CSS • JS • Python
+Développeur Web • UI/UX • Python
 
 </p>
-
-<a class="btn" href="#">
-Télécharger CV
-</a>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="stats">
-
-<div class="card stat">
-<h2>10+</h2>
-<p>Projets</p>
-</div>
-
-<div class="card stat">
-<h2>3+</h2>
-<p>Technologies</p>
-</div>
-
-<div class="card stat">
-<h2>100%</h2>
-<p>Motivation</p>
-</div>
 
 </div>
 
@@ -280,15 +434,14 @@ Télécharger CV
 
 <section id="about">
 
-<div class="glass">
+<div class="glass hidden">
 
 <h2>À propos</h2>
 
 <p>
 
-Passionné par la création
-de solutions modernes
-et d'interfaces propres.
+Création de solutions modernes,
+interfaces premium et expériences utilisateurs.
 
 </p>
 
@@ -298,15 +451,45 @@ et d'interfaces propres.
 
 <section id="skills">
 
-<h2>Compétences</h2>
+<h2 class="hidden">
 
-<div class="skills">
+Compétences
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Python</div>
-<div class="skill">UI/UX</div>
+</h2>
+
+<div class="skill hidden">
+
+HTML
+
+<div class="bar">
+
+<div class="fill" style="width:95%"></div>
+
+</div>
+
+</div>
+
+<div class="skill hidden">
+
+CSS
+
+<div class="bar">
+
+<div class="fill" style="width:90%"></div>
+
+</div>
+
+</div>
+
+<div class="skill hidden">
+
+JavaScript
+
+<div class="bar">
+
+<div class="fill" style="width:85%"></div>
+
+</div>
 
 </div>
 
@@ -314,35 +497,35 @@ et d'interfaces propres.
 
 <section id="projects">
 
-<h2>Mes Projets</h2>
+<h2 class="hidden">
 
-<div id="projectsContainer"
-class="grid">
+Mes projets
+
+</h2>
+
+<div
+
+class="grid"
+
+id="projectsContainer">
 
 </div>
 
 <div class="card">
 
-<input id="title"
-placeholder="Titre">
+<input id="title" placeholder="Titre">
 
-<input id="desc"
-placeholder="Description">
+<input id="desc" placeholder="Description">
 
-<input id="img"
-placeholder="Image URL">
-
-<input id="demo"
-placeholder="Lien démo">
-
-<input id="github"
-placeholder="Lien code">
+<input id="img" placeholder="Image URL">
 
 <button
+
 class="btn"
+
 onclick="addProject()">
 
-Ajouter projet
+Ajouter Projet
 
 </button>
 
@@ -352,19 +535,13 @@ Ajouter projet
 
 <section id="contact">
 
-<div class="glass">
-
-<h2>Contact</h2>
+<div class="glass hidden">
 
 <input placeholder="Nom">
 
 <input placeholder="Email">
 
-<textarea
-rows="6"
-placeholder="Message">
-
-</textarea>
+<textarea rows="6" placeholder="Message"></textarea>
 
 <button class="btn">
 
@@ -376,113 +553,168 @@ Envoyer
 
 </section>
 
-<button
-id="topBtn"
-class="btn top-btn">
+<button id="top" class="btn top">
 
 ↑
 
 </button>
 
-<footer>
-
-© 2026 Phanuel Kamga
-
-</footer>
-
 <script>
 
-profileInput.addEventListener(
-"change",
-function(){
+photo.onchange=e=>{
 
-const file=this.files[0];
+profile.src=
 
-if(file){
+URL.createObjectURL(
 
-profilePreview.src=
-URL.createObjectURL(file);
+e.target.files[0]
+
+);
+
+};
+
+const txt="Phanuel Kamga";
+
+let i=0;
+
+setInterval(()=>{
+
+if(i<txt.length){
+
+typing.innerHTML+=txt[i];
+
+i++;
 
 }
 
-});
+},120);
 
 function addProject(){
 
-const title=
-document.getElementById("title").value;
-
-if(!title)return;
-
 projectsContainer.innerHTML+=`
 
-<div class="card project">
+<div class="card project hidden">
 
-<img src="${
-img.value ||
-'https://picsum.photos/500'
-}">
+<img src="${img.value||'https://picsum.photos/400'}">
 
-<h3>${title}</h3>
+<h3>${title.value}</h3>
 
 <p>${desc.value}</p>
-
-<a class="btn"
-href="${demo.value}">
-Demo
-</a>
-
-<a class="btn"
-href="${github.value}">
-Code
-</a>
-
-<button
-class="btn"
-onclick="this.parentElement.remove()">
-
-Supprimer
-
-</button>
 
 </div>
 
 `;
 
-document
-.querySelectorAll(
-"#projects input"
-)
-.forEach(x=>x.value="");
+}
+
+const observer=
+
+new IntersectionObserver(
+
+entries=>{
+
+entries.forEach(
+
+e=>{
+
+if(e.isIntersecting){
+
+e.target.classList.add(
+
+"show"
+
+);
 
 }
 
-const topBtn=
-document.getElementById(
-"topBtn"
+}
+
+)
+
+}
+
+);
+
+document
+
+.querySelectorAll(".hidden")
+
+.forEach(
+
+x=>observer.observe(x)
+
+);
+
+document.addEventListener(
+
+"mousemove",
+
+e=>{
+
+document.querySelector(
+
+".cursor"
+
+).style.left=e.clientX+"px";
+
+document.querySelector(
+
+".cursor"
+
+).style.top=e.clientY+"px";
+
+}
+
 );
 
 window.onscroll=()=>{
 
-topBtn.style.display=
-window.scrollY>400
+top.style.display=
+
+scrollY>500
+
 ? "block"
+
 : "none";
 
 };
 
-topBtn.onclick=()=>{
+top.onclick=()=>{
 
-window.scrollTo({
+scrollTo({
 
 top:0,
+
 behavior:"smooth"
 
 });
 
 };
 
+particlesJS(
+
+"particles-js",
+
+{
+
+particles:{
+
+number:{value:60},
+
+size:{value:3},
+
+move:{speed:2},
+
+line_linked:{enable:true}
+
+}
+
+}
+
+);
+
 </script>
 
 </body>
-</html>
+
+  </html>
