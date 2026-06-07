@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Nkounga Kamga Phanuel Victor | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -32,8 +34,8 @@ scroll-behavior:smooth;
 body{
 background:var(--bg);
 color:var(--text);
-overflow-x:hidden;
 line-height:1.7;
+overflow-x:hidden;
 }
 
 .container{
@@ -47,34 +49,17 @@ padding:90px 0;
 
 .hero{
 height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,.75),
-rgba(0,0,0,.85)
-),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
-
-background-size:cover;
-background-position:center;
-
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:30px;
-}
 
-.hero-content{
-max-width:900px;
-}
+background:
+linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.85)),
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
 
-h1{
-font-size:4rem;
-}
-
-h2{
-margin-bottom:20px;
+background-size:cover;
+background-position:center;
 }
 
 .highlight{
@@ -83,16 +68,15 @@ color:var(--green);
 
 .glass{
 background:var(--glass);
-backdrop-filter:blur(18px);
 padding:35px;
 border-radius:20px;
+backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,.08);
 }
 
 .grid{
 display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
@@ -100,8 +84,7 @@ gap:20px;
 background:var(--card);
 padding:25px;
 border-radius:20px;
-transition:.35s;
-border:1px solid rgba(255,255,255,.05);
+transition:.3s;
 }
 
 .card:hover{
@@ -114,18 +97,15 @@ padding-left:25px;
 }
 
 .timeline div{
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
-.stats{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-}
-
-.stat{
-text-align:center;
+.badge{
+display:inline-block;
+padding:10px 16px;
+margin:5px;
+border-radius:999px;
+background:#151515;
 }
 
 input,
@@ -140,41 +120,38 @@ color:white;
 }
 
 button{
-padding:14px 24px;
+padding:14px 20px;
 border:none;
 border-radius:12px;
 background:var(--green);
 color:white;
 cursor:pointer;
-margin-top:15px;
+margin-top:10px;
 }
 
-ul{
-padding-left:20px;
+.project-img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:15px;
 }
 
 footer{
 padding:40px;
 text-align:center;
-border-top:1px solid rgba(255,255,255,.06);
-}
-
-.badge{
-display:inline-block;
-padding:10px 16px;
-background:#151515;
-border-radius:999px;
-margin:6px;
+border-top:1px solid rgba(255,255,255,.08);
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header class="hero">
 
-<div class="hero-content">
+<div>
 
 <h1>
 
@@ -209,15 +186,10 @@ Phanuel Victor
 
 <p>
 
-Je suis Nkounga Kamga Phanuel Victor,
-passionné par les technologies,
+Je suis passionné par les technologies,
 le développement web,
 les réseaux informatiques
-et les solutions numériques.
-
-Je cherche constamment à apprendre,
-expérimenter et construire des expériences
-utiles, modernes et professionnelles.
+et les solutions numériques modernes.
 
 </p>
 
@@ -240,7 +212,7 @@ utiles, modernes et professionnelles.
 
 <h3>BEPC — 2022</h3>
 
-<p>Obtention du BEPC</p>
+<p>Obtention du diplôme</p>
 
 </div>
 
@@ -248,7 +220,7 @@ utiles, modernes et professionnelles.
 
 <h3>Probatoire — 2024</h3>
 
-<p>Validation du cycle secondaire supérieur</p>
+<p>Cycle secondaire supérieur</p>
 
 </div>
 
@@ -256,7 +228,7 @@ utiles, modernes et professionnelles.
 
 <h3>Baccalauréat — 2025</h3>
 
-<p>Obtention du BAC</p>
+<p>Validation du BAC</p>
 
 </div>
 
@@ -264,79 +236,9 @@ utiles, modernes et professionnelles.
 
 <h3>IUT Première Année — 2026</h3>
 
-<p>Formation supérieure en informatique</p>
+<p>Formation informatique</p>
 
 </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container">
-
-<h2>Mes Qualités</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<ul>
-
-<li>Motivé</li>
-<li>Autonome</li>
-<li>Créatif</li>
-<li>Travailleur</li>
-<li>Esprit analytique</li>
-<li>Apprentissage rapide</li>
-<li>Capacité d'adaptation</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h3>Pourquoi travailler avec moi ?</h3>
-
-<p>
-
-Je privilégie la qualité,
-l'écoute,
-la progression continue
-et les solutions efficaces.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container">
-
-<h2>Objectifs Professionnels</h2>
-
-<div class="glass">
-
-<p>
-
-Développer des solutions modernes,
-participer à des projets innovants
-et approfondir mes compétences
-dans le développement et les réseaux.
-
-</p>
 
 </div>
 
@@ -351,79 +253,13 @@ dans le développement et les réseaux.
 
 <h2>Technologies</h2>
 
-<div>
-
-<span class="badge">HTML5</span>
-<span class="badge">CSS3</span>
+<span class="badge">HTML</span>
+<span class="badge">CSS</span>
 <span class="badge">JavaScript</span>
 <span class="badge">Python</span>
 <span class="badge">Git</span>
-<span class="badge">UI/UX</span>
+<span class="badge">UI / UX</span>
 <span class="badge">Réseaux</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container">
-
-<h2>Quelques chiffres</h2>
-
-<div class="stats">
-
-<div class="card stat">
-
-<h1>10+</h1>
-
-<p>Mini projets</p>
-
-</div>
-
-<div class="card stat">
-
-<h1>4+</h1>
-
-<p>Domaines étudiés</p>
-
-</div>
-
-<div class="card stat">
-
-<h1>100%</h1>
-
-<p>Motivation</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container">
-
-<h2>Services</h2>
-
-<div class="grid">
-
-<div class="card">Développement Web</div>
-
-<div class="card">UI / UX</div>
-
-<div class="card">Applications Digitales</div>
-
-<div class="card">Réseaux Informatiques</div>
-
-</div>
 
 </div>
 
@@ -436,98 +272,82 @@ dans le développement et les réseaux.
 
 <h2>Mes Projets</h2>
 
-<div class="grid">
+<div class="grid" id="projectsContainer">
 
 <div class="card">
 
 <h3>Portfolio Personnel</h3>
 
-<p>Conception d'un portfolio responsive.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Projet Réseau</h3>
-
-<p>Architecture et configuration réseau.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Application Web</h3>
-
-<p>Interfaces modernes et dynamiques.</p>
+<p>Portfolio responsive moderne.</p>
 
 </div>
 
 </div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container">
 
 <div class="glass">
 
-<h2>Disponibilité</h2>
+<h3>Ajouter un Projet</h3>
 
-<ul>
+<input id="projectTitle" placeholder="Titre">
 
-<li>Stages</li>
+<input id="projectImage" placeholder="Lien image">
 
-<li>Collaborations</li>
+<input id="projectDemo" placeholder="Lien démo">
 
-<li>Projets étudiants</li>
+<input id="projectCode" placeholder="Lien code">
 
-<li>Développement web</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container">
-
-<div class="glass">
-
-<h2>Me Contacter</h2>
-
-<p>Email : kamgaphanuel@gmail.com</p>
-
-<p>WhatsApp : 673936110</p>
-
-<form action="mailto:kamgaphanuel@gmail.com">
-
-<input placeholder="Nom">
-
-<input placeholder="Prénom">
-
-<input type="email" placeholder="Email">
-
-<textarea rows="6"
-placeholder="Pourquoi me contactez-vous ?">
+<textarea id="projectDesc"
+placeholder="Description">
 
 </textarea>
 
-<button>
+<button onclick="addProject()">
 
-Envoyer
+Ajouter Projet
 
 </button>
 
-</form>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<div class="glass">
+
+<h2>Contact</h2>
+
+<p>📧 kamgaphanuel@gmail.com</p>
+
+<p>📱 WhatsApp : 673936110</p>
+
+<input id="nom" placeholder="Nom">
+
+<input id="prenom" placeholder="Prénom">
+
+<input id="mail" placeholder="Email">
+
+<textarea id="raison"
+placeholder="Pourquoi m'écrivez-vous ?">
+
+</textarea>
+
+<button onclick="sendMail()">
+
+Envoyer Mail
+
+</button>
+
+<button onclick="sendWhatsapp()">
+
+Envoyer WhatsApp
+
+</button>
 
 </div>
 
@@ -540,23 +360,150 @@ Envoyer
 
 <p>
 
-Nkounga Kamga Phanuel Victor
-
-</p>
-
-<p>
-
-Développement Web • Réseaux • UI / UX
-
-</p>
-
-<p>
-
-© 2026 Tous droits réservés
+© 2026 Nkounga Kamga Phanuel Victor
 
 </p>
 
 </footer>
 
+
+<script>
+
+function addProject(){
+
+const title =
+document.getElementById(
+"projectTitle"
+).value;
+
+if(!title){
+
+alert(
+"Ajoute un titre"
+);
+
+return;
+
+}
+
+document
+.getElementById(
+"projectsContainer"
+)
+
+.innerHTML += `
+
+<div class="card">
+
+<img class="project-img"
+
+src="${projectImage.value || 'https://picsum.photos/400'}">
+
+<h3>
+
+${projectTitle.value}
+
+</h3>
+
+<p>
+
+${projectDesc.value}
+
+</p>
+
+<a href="${projectDemo.value}" target="_blank">
+
+Démo
+
+</a>
+
+<br>
+
+<a href="${projectCode.value}" target="_blank">
+
+Code Source
+
+</a>
+
+<br><br>
+
+<button onclick="this.parentElement.remove()">
+
+Supprimer
+
+</button>
+
+</div>
+
+`;
+
+[
+projectTitle,
+projectImage,
+projectDemo,
+projectCode,
+projectDesc
+
+].forEach(
+
+e=>e.value=""
+
+);
+
+}
+
+
+function sendMail(){
+
+const body =
+
+`
+Nom : ${nom.value}
+
+Prénom : ${prenom.value}
+
+Email : ${mail.value}
+
+Message :
+
+${raison.value}
+
+`;
+
+window.location.href =
+
+`mailto:kamgaphanuel@gmail.com?subject=Portfolio&body=${encodeURIComponent(body)}`;
+
+}
+
+
+function sendWhatsapp(){
+
+const msg =
+
+`
+Nom : ${nom.value}
+
+Prénom : ${prenom.value}
+
+Email : ${mail.value}
+
+Message :
+
+${raison.value}
+
+`;
+
+window.open(
+
+`https://wa.me/237673936110?text=${encodeURIComponent(msg)}`
+
+);
+
+}
+
+</script>
+
 </body>
-                         </html>
+
+</html>
