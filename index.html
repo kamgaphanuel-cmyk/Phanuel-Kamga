@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Phanuel Kamga Portfolio</title>
+<title>Nkounga Kamga Phanuel Victor | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---green:#1faa59;
---bg:#071019;
---glass:rgba(255,255,255,.08);
+--bg:#050505;
+--card:#0d0d0d;
+--glass:rgba(255,255,255,.05);
+--green:#22c55e;
+--text:#ffffff;
 }
 
 *{
@@ -32,689 +31,532 @@ scroll-behavior:smooth;
 
 body{
 background:var(--bg);
-color:white;
+color:var(--text);
 overflow-x:hidden;
+line-height:1.7;
 }
 
-/* loader */
-
-.loader{
-position:fixed;
-inset:0;
-background:#071019;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:2rem;
-font-weight:700;
-z-index:9999;
-animation:fadeout 1s forwards;
-animation-delay:2s;
-}
-
-@keyframes fadeout{
-to{
-opacity:0;
-visibility:hidden;
-}
-}
-
-/* particles */
-
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-2;
-}
-
-/* aurora */
-
-.bg{
-position:fixed;
-inset:0;
-z-index:-1;
-background:
-radial-gradient(circle at 20% 30%,#1faa5940,transparent),
-radial-gradient(circle at 80% 20%,#00ffee20,transparent),
-radial-gradient(circle at 50% 90%,#ffffff15,transparent);
-
-filter:blur(80px);
-
-animation:move 10s infinite alternate;
-}
-
-@keyframes move{
-
-from{
-transform:translateY(-50px);
-}
-
-to{
-transform:translateY(50px);
-}
-
-}
-
-nav{
-
-position:fixed;
-top:0;
-width:100%;
-padding:20px 8%;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-backdrop-filter:blur(20px);
-
-z-index:999;
-
-}
-
-nav ul{
-
-display:flex;
-gap:20px;
-list-style:none;
-
-}
-
-nav a{
-
-color:white;
-text-decoration:none;
-
+.container{
+width:min(1200px,92%);
+margin:auto;
 }
 
 section{
-
-padding:120px 8%;
-
+padding:90px 0;
 }
 
 .hero{
-
 height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.85)
+),
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+
+background-size:cover;
+background-position:center;
 
 display:flex;
 justify-content:center;
 align-items:center;
-
 text-align:center;
+padding:30px;
+}
 
+.hero-content{
+max-width:900px;
+}
+
+h1{
+font-size:4rem;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+.highlight{
+color:var(--green);
 }
 
 .glass{
-
 background:var(--glass);
-
-padding:40px;
-
-border-radius:25px;
-
-backdrop-filter:blur(20px);
-
-box-shadow:0 10px 40px rgba(0,0,0,.4);
-
-}
-
-.profile{
-
-width:190px;
-height:190px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:5px solid white;
-
-transition:.6s;
-
-}
-
-.profile:hover{
-
-transform:
-rotateY(180deg)
-scale(1.08);
-
-}
-
-.btn{
-
-padding:12px 24px;
-
-border:none;
-
-border-radius:12px;
-
-background:var(--green);
-
-color:white;
-
-cursor:pointer;
-
-margin-top:12px;
-
+backdrop-filter:blur(18px);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
 }
 
 .grid{
-
 display:grid;
-
 grid-template-columns:
-
 repeat(auto-fit,minmax(280px,1fr));
-
-gap:25px;
-
+gap:20px;
 }
 
 .card{
-
-background:var(--glass);
-
+background:var(--card);
 padding:25px;
-
 border-radius:20px;
-
-transition:.5s;
-
-transform-style:preserve-3d;
-
+transition:.35s;
+border:1px solid rgba(255,255,255,.05);
 }
 
 .card:hover{
-
-transform:
-
-translateY(-10px)
-
-rotateX(5deg)
-
-rotateY(-5deg);
-
+transform:translateY(-8px);
 }
 
-.skill{
-
-margin-top:20px;
-
+.timeline{
+border-left:3px solid var(--green);
+padding-left:25px;
 }
 
-.bar{
-
-height:10px;
-
-background:#ffffff20;
-
-border-radius:30px;
-
-overflow:hidden;
-
+.timeline div{
+margin-bottom:30px;
 }
 
-.fill{
-
-height:100%;
-
-background:var(--green);
-
+.stats{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
 }
 
-.project img{
+.stat{
+text-align:center;
+}
 
+input,
+textarea{
 width:100%;
-height:180px;
-
-object-fit:cover;
-
-border-radius:12px;
-
-}
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(100px);
-
-transition:1s;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:none;
-
-}
-
-.cursor{
-
-position:fixed;
-
-width:20px;
-
-height:20px;
-
-border:2px solid white;
-
-border-radius:50%;
-
-pointer-events:none;
-
-transform:translate(-50%,-50%);
-
-z-index:99999;
-
-}
-
-.top{
-
-position:fixed;
-
-right:20px;
-
-bottom:20px;
-
-display:none;
-
-}
-
-input,textarea{
-
-width:100%;
-
-padding:12px;
-
-margin-top:10px;
-
+padding:14px;
+margin-top:12px;
 border:none;
-
-border-radius:10px;
-
+border-radius:12px;
+background:#121212;
+color:white;
 }
 
-@media(max-width:800px){
-
-nav ul{
-
-display:none;
-
+button{
+padding:14px 24px;
+border:none;
+border-radius:12px;
+background:var(--green);
+color:white;
+cursor:pointer;
+margin-top:15px;
 }
 
+ul{
+padding-left:20px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+.badge{
+display:inline-block;
+padding:10px 16px;
+background:#151515;
+border-radius:999px;
+margin:6px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="loader">
+<header class="hero">
 
-Portfolio Loading...
+<div class="hero-content">
+
+<h1>
+
+Nkounga Kamga
+
+<span class="highlight">
+
+Phanuel Victor
+
+</span>
+
+</h1>
+
+<p>
+
+Étudiant • Développeur • Passionné d'informatique
+
+</p>
 
 </div>
 
-<div id="particles-js"></div>
+</header>
 
-<div class="bg"></div>
 
-<div class="cursor"></div>
+<section>
 
-<nav>
+<div class="container">
 
-<h2>Phanuel</h2>
+<div class="glass">
+
+<h2>Présentation</h2>
+
+<p>
+
+Je suis Nkounga Kamga Phanuel Victor,
+passionné par les technologies,
+le développement web,
+les réseaux informatiques
+et les solutions numériques.
+
+Je cherche constamment à apprendre,
+expérimenter et construire des expériences
+utiles, modernes et professionnelles.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Parcours Académique</h2>
+
+<div class="glass timeline">
+
+<div>
+
+<h3>BEPC — 2022</h3>
+
+<p>Obtention du BEPC</p>
+
+</div>
+
+<div>
+
+<h3>Probatoire — 2024</h3>
+
+<p>Validation du cycle secondaire supérieur</p>
+
+</div>
+
+<div>
+
+<h3>Baccalauréat — 2025</h3>
+
+<p>Obtention du BAC</p>
+
+</div>
+
+<div>
+
+<h3>IUT Première Année — 2026</h3>
+
+<p>Formation supérieure en informatique</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Mes Qualités</h2>
+
+<div class="grid">
+
+<div class="card">
 
 <ul>
 
-<li><a href="#about">About</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#contact">Contact</a></li>
+<li>Motivé</li>
+<li>Autonome</li>
+<li>Créatif</li>
+<li>Travailleur</li>
+<li>Esprit analytique</li>
+<li>Apprentissage rapide</li>
+<li>Capacité d'adaptation</li>
 
 </ul>
-
-</nav>
-
-<section class="hero">
-
-<div class="glass hidden">
-
-<img
-
-id="profile"
-
-class="profile"
-
-src="https://i.ibb.co/21HVWMpG/199371.jpg">
-
-<br>
-
-<input
-
-hidden
-
-type="file"
-
-accept="image/*"
-
-id="photo">
-
-<button
-
-class="btn"
-
-onclick="photo.click()">
-
-Changer Photo
-
-</button>
-
-<h1 id="typing"></h1>
-
-<p>
-
-Développeur Web • UI/UX • Python
-
-</p>
-
-</div>
-
-</section>
-
-<section id="about">
-
-<div class="glass hidden">
-
-<h2>À propos</h2>
-
-<p>
-
-Création de solutions modernes,
-interfaces premium et expériences utilisateurs.
-
-</p>
-
-</div>
-
-</section>
-
-<section id="skills">
-
-<h2 class="hidden">
-
-Compétences
-
-</h2>
-
-<div class="skill hidden">
-
-HTML
-
-<div class="bar">
-
-<div class="fill" style="width:95%"></div>
-
-</div>
-
-</div>
-
-<div class="skill hidden">
-
-CSS
-
-<div class="bar">
-
-<div class="fill" style="width:90%"></div>
-
-</div>
-
-</div>
-
-<div class="skill hidden">
-
-JavaScript
-
-<div class="bar">
-
-<div class="fill" style="width:85%"></div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="projects">
-
-<h2 class="hidden">
-
-Mes projets
-
-</h2>
-
-<div
-
-class="grid"
-
-id="projectsContainer">
 
 </div>
 
 <div class="card">
 
-<input id="title" placeholder="Titre">
+<h3>Pourquoi travailler avec moi ?</h3>
 
-<input id="desc" placeholder="Description">
+<p>
 
-<input id="img" placeholder="Image URL">
+Je privilégie la qualité,
+l'écoute,
+la progression continue
+et les solutions efficaces.
 
-<button
+</p>
 
-class="btn"
+</div>
 
-onclick="addProject()">
-
-Ajouter Projet
-
-</button>
+</div>
 
 </div>
 
 </section>
 
-<section id="contact">
 
-<div class="glass hidden">
+<section>
+
+<div class="container">
+
+<h2>Objectifs Professionnels</h2>
+
+<div class="glass">
+
+<p>
+
+Développer des solutions modernes,
+participer à des projets innovants
+et approfondir mes compétences
+dans le développement et les réseaux.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Technologies</h2>
+
+<div>
+
+<span class="badge">HTML5</span>
+<span class="badge">CSS3</span>
+<span class="badge">JavaScript</span>
+<span class="badge">Python</span>
+<span class="badge">Git</span>
+<span class="badge">UI/UX</span>
+<span class="badge">Réseaux</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Quelques chiffres</h2>
+
+<div class="stats">
+
+<div class="card stat">
+
+<h1>10+</h1>
+
+<p>Mini projets</p>
+
+</div>
+
+<div class="card stat">
+
+<h1>4+</h1>
+
+<p>Domaines étudiés</p>
+
+</div>
+
+<div class="card stat">
+
+<h1>100%</h1>
+
+<p>Motivation</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Services</h2>
+
+<div class="grid">
+
+<div class="card">Développement Web</div>
+
+<div class="card">UI / UX</div>
+
+<div class="card">Applications Digitales</div>
+
+<div class="card">Réseaux Informatiques</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Mes Projets</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Portfolio Personnel</h3>
+
+<p>Conception d'un portfolio responsive.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Projet Réseau</h3>
+
+<p>Architecture et configuration réseau.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Application Web</h3>
+
+<p>Interfaces modernes et dynamiques.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<div class="glass">
+
+<h2>Disponibilité</h2>
+
+<ul>
+
+<li>Stages</li>
+
+<li>Collaborations</li>
+
+<li>Projets étudiants</li>
+
+<li>Développement web</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<div class="glass">
+
+<h2>Me Contacter</h2>
+
+<p>Email : kamgaphanuel@gmail.com</p>
+
+<p>WhatsApp : 673936110</p>
+
+<form action="mailto:kamgaphanuel@gmail.com">
 
 <input placeholder="Nom">
 
-<input placeholder="Email">
+<input placeholder="Prénom">
 
-<textarea rows="6" placeholder="Message"></textarea>
+<input type="email" placeholder="Email">
 
-<button class="btn">
+<textarea rows="6"
+placeholder="Pourquoi me contactez-vous ?">
+
+</textarea>
+
+<button>
 
 Envoyer
 
 </button>
 
+</form>
+
+</div>
+
 </div>
 
 </section>
 
-<button id="top" class="btn top">
 
-↑
+<footer>
 
-</button>
+<p>
 
-<script>
+Nkounga Kamga Phanuel Victor
 
-photo.onchange=e=>{
+</p>
 
-profile.src=
+<p>
 
-URL.createObjectURL(
+Développement Web • Réseaux • UI / UX
 
-e.target.files[0]
+</p>
 
-);
+<p>
 
-};
+© 2026 Tous droits réservés
 
-const txt="Phanuel Kamga";
+</p>
 
-let i=0;
-
-setInterval(()=>{
-
-if(i<txt.length){
-
-typing.innerHTML+=txt[i];
-
-i++;
-
-}
-
-},120);
-
-function addProject(){
-
-projectsContainer.innerHTML+=`
-
-<div class="card project hidden">
-
-<img src="${img.value||'https://picsum.photos/400'}">
-
-<h3>${title.value}</h3>
-
-<p>${desc.value}</p>
-
-</div>
-
-`;
-
-}
-
-const observer=
-
-new IntersectionObserver(
-
-entries=>{
-
-entries.forEach(
-
-e=>{
-
-if(e.isIntersecting){
-
-e.target.classList.add(
-
-"show"
-
-);
-
-}
-
-}
-
-)
-
-}
-
-);
-
-document
-
-.querySelectorAll(".hidden")
-
-.forEach(
-
-x=>observer.observe(x)
-
-);
-
-document.addEventListener(
-
-"mousemove",
-
-e=>{
-
-document.querySelector(
-
-".cursor"
-
-).style.left=e.clientX+"px";
-
-document.querySelector(
-
-".cursor"
-
-).style.top=e.clientY+"px";
-
-}
-
-);
-
-window.onscroll=()=>{
-
-top.style.display=
-
-scrollY>500
-
-? "block"
-
-: "none";
-
-};
-
-top.onclick=()=>{
-
-scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-};
-
-particlesJS(
-
-"particles-js",
-
-{
-
-particles:{
-
-number:{value:60},
-
-size:{value:3},
-
-move:{speed:2},
-
-line_linked:{enable:true}
-
-}
-
-}
-
-);
-
-</script>
+</footer>
 
 </body>
-
-  </html>
+                         </html>
