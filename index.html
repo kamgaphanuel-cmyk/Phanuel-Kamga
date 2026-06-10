@@ -4,27 +4,27 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nkounga Kamga Phanuel Victor | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#050505;
---card:#0d0d0d;
---glass:rgba(255,255,255,.05);
 --green:#22c55e;
+--dark:#050505;
+--card:#0d0d0d;
 --text:#ffffff;
+--glass:rgba(255,255,255,.05);
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 html{
@@ -32,59 +32,91 @@ scroll-behavior:smooth;
 }
 
 body{
-background:var(--bg);
-color:var(--text);
-line-height:1.7;
+background:#050505;
+color:white;
 overflow-x:hidden;
 }
 
-/* Fond animé */
+/* LOADER */
 
-body::before{
-content:"";
+.loader{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:
-radial-gradient(circle at 20% 20%, rgba(34,197,94,.15), transparent 25%),
-radial-gradient(circle at 80% 60%, rgba(34,197,94,.10), transparent 25%),
-radial-gradient(circle at 50% 90%, rgba(34,197,94,.08), transparent 25%);
-animation:bgMove 15s infinite alternate;
-pointer-events:none;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.loader span{
+width:60px;
+height:60px;
+border:5px solid rgba(255,255,255,.1);
+border-top:5px solid #22c55e;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* PARTICLES */
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 z-index:-1;
 }
 
-@keyframes bgMove{
-from{
-transform:translateY(-30px);
-}
-to{
-transform:translateY(30px);
-}
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(15px);
+z-index:1000;
 }
 
-.container{
-width:min(1200px,92%);
-margin:auto;
+.logo{
+font-size:1.4rem;
+font-weight:700;
+color:#22c55e;
 }
 
-section{
-padding:90px 0;
-animation:fadeUp 1s ease;
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
 }
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
+nav a{
+text-decoration:none;
+color:white;
+transition:.3s;
 }
-to{
-opacity:1;
-transform:translateY(0);
+
+nav a:hover{
+color:#22c55e;
 }
-}
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -92,56 +124,53 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-
-background:
-linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.85)),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
-
-background-size:cover;
-background-position:center;
+padding:20px;
 }
 
 .hero-content{
+max-width:900px;
 animation:float 5s ease-in-out infinite;
 }
 
 @keyframes float{
-0%{
+0%,100%{
 transform:translateY(0);
 }
 50%{
-transform:translateY(-15px);
-}
-100%{
-transform:translateY(0);
+transform:translateY(-20px);
 }
 }
 
-h1{
-font-size:3rem;
+.hero h1{
+font-size:4rem;
+font-weight:800;
+line-height:1.1;
 
-background:linear-gradient(
+background:
+linear-gradient(
 90deg,
 #22c55e,
-#ffffff,
+white,
 #22c55e
 );
 
 background-size:300%;
-
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
-animation:shine 6s linear infinite;
+animation:shine 8s linear infinite;
 }
 
 @keyframes shine{
-0%{
-background-position:0%;
-}
 100%{
 background-position:300%;
 }
+}
+
+.hero p{
+font-size:1.2rem;
+margin-top:20px;
+color:#d1d5db;
 }
 
 .highlight{
@@ -151,130 +180,243 @@ text-shadow:
 0 0 40px #22c55e;
 }
 
+.hero-buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:#22c55e;
+color:white;
+}
+
+.btn-secondary{
+border:1px solid #22c55e;
+color:#22c55e;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(34,197,94,.5);
+}
+
+/* GENERAL */
+
+.container{
+width:min(1200px,92%);
+margin:auto;
+}
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:2.3rem;
+margin-bottom:50px;
+}
+
 .glass{
-background:var(--glass);
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-radius:25px;
 padding:35px;
+box-shadow:0 0 25px rgba(34,197,94,.08);
+}
+
+/* ABOUT */
+
+.about p{
+text-align:center;
+font-size:1.1rem;
+line-height:1.9;
+}
+
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.skill{
+padding:12px 20px;
+border-radius:999px;
+background:#111;
+transition:.3s;
+}
+
+.skill:hover{
+background:#22c55e;
+transform:scale(1.1);
+}
+
+/* COUNTERS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:50px;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h3{
+font-size:3rem;
+color:#22c55e;
+}
+
+.stat p{
+color:#ccc;
+}/* TIMELINE */
+
+.timeline{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:50%;
+top:0;
+width:4px;
+height:100%;
+background:#22c55e;
+transform:translateX(-50%);
+}
+
+.timeline-item{
+position:relative;
+width:50%;
+padding:20px 40px;
+}
+
+.timeline-item:nth-child(odd){
+left:0;
+text-align:right;
+}
+
+.timeline-item:nth-child(even){
+left:50%;
+}
+
+.timeline-content{
+background:#0d0d0d;
+padding:20px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.timeline-content:hover{
+transform:scale(1.04);
+box-shadow:0 0 25px rgba(34,197,94,.25);
+}
+
+/* PROJETS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:#0d0d0d;
 border-radius:20px;
-backdrop-filter:blur(18px);
+overflow:hidden;
+transition:.4s;
+transform-style:preserve-3d;
 border:1px solid rgba(255,255,255,.08);
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+.project-card:hover{
+transform:
+rotateX(5deg)
+rotateY(-5deg)
+translateY(-10px);
+box-shadow:
+0 0 30px rgba(34,197,94,.25);
 }
 
-.card{
-background:var(--card);
+.project-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-content{
 padding:25px;
-border-radius:20px;
-transition:.3s;
-position:relative;
-overflow:hidden;
 }
 
-.card::before{
-content:"";
-position:absolute;
-top:-100%;
-left:-100%;
-width:200%;
-height:200%;
-background:
-linear-gradient(
-45deg,
-transparent,
-rgba(255,255,255,.08),
-transparent
-);
-transform:rotate(45deg);
-transition:.8s;
+.project-content h3{
+margin-bottom:10px;
 }
 
-.card:hover::before{
-top:100%;
-left:100%;
+.project-links{
+margin-top:15px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(34,197,94,.2);
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
 }
 
-.timeline{
-border-left:3px solid var(--green);
-padding-left:25px;
-}
-
-.timeline div{
-margin-bottom:25px;
-}
-
-.badge{
-display:inline-block;
-padding:10px 16px;
-margin:5px;
-border-radius:999px;
-background:#151515;
-transition:.3s;
-}
-
-.badge:hover{
-transform:scale(1.1);
-background:#22c55e;
+.contact-info p{
+margin:15px 0;
+font-size:1.05rem;
 }
 
 input,
 textarea{
 width:100%;
-padding:14px;
+padding:15px;
 margin-top:12px;
 border:none;
 border-radius:12px;
-background:#121212;
+background:#101010;
 color:white;
 }
 
 input:focus,
 textarea:focus{
 outline:none;
-box-shadow:0 0 15px #22c55e;
+box-shadow:
+0 0 15px #22c55e;
 }
 
-button{
-padding:14px 20px;
-border:none;
-border-radius:12px;
-background:var(--green);
-color:white;
-cursor:pointer;
-margin-top:10px;
-transition:.3s;
+textarea{
+height:150px;
+resize:none;
 }
 
-button:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 0 20px #22c55e;
-}
-
-.project-img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:15px;
-}
-
-section::after{
-content:"";
-display:block;
-width:120px;
-height:3px;
-background:#22c55e;
-margin:30px auto 0;
-box-shadow:0 0 15px #22c55e;
-}
+/* FOOTER */
 
 footer{
 padding:40px;
@@ -282,17 +424,29 @@ text-align:center;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
-::-webkit-scrollbar{
-width:10px;
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
 }
 
-::-webkit-scrollbar-track{
-background:#080808;
+.timeline::before{
+left:20px;
 }
 
-::-webkit-scrollbar-thumb{
-background:#22c55e;
-border-radius:20px;
+.timeline-item{
+width:100%;
+left:0!important;
+padding-left:60px;
+text-align:left!important;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -301,38 +455,85 @@ border-radius:20px;
 
 <body>
 
+<div class="loader">
+<span></span>
+</div>
+
+<canvas id="particles"></canvas>
+
+<nav>
+
+<div class="logo">
+PHANUEL
+</div>
+
+<ul>
+
+<li><a href="#about">Présentation</a></li>
+
+<li><a href="#skills">Compétences</a></li>
+
+<li><a href="#parcours">Parcours</a></li>
+
+<li><a href="#projects">Projets</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
 <header class="hero">
 
 <div class="hero-content">
 
 <h1>
+
 Nkounga Kamga
+
 <span class="highlight">
+
 Phanuel Victor
+
 </span>
+
 </h1>
 
-<p>
-Étudiant • Développeur • Passionné d'informatique
-</p>
+<p id="typing"></p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn btn-primary">
+Voir mes projets
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Me contacter
+</a>
+
+</div>
 
 </div>
 
 </header>
 
-<section>
+<section id="about">
 
 <div class="container">
 
-<div class="glass">
+<h2 class="section-title">
+Présentation
+</h2>
 
-<h2>Présentation</h2>
+<div class="glass about">
 
 <p>
-Je suis passionné par les technologies,
-le développement web,
-les réseaux informatiques
-et les solutions numériques modernes.
+
+Je suis passionné par le développement web,
+les technologies modernes,
+l'informatique,
+les réseaux et la création de solutions numériques innovantes.
+
 </p>
 
 </div>
@@ -341,92 +542,184 @@ et les solutions numériques modernes.
 
 </section>
 
-<section>
+<section id="skills">
 
 <div class="container">
 
-<h2>Parcours Académique</h2>
+<h2 class="section-title">
+Compétences
+</h2>
 
-<div class="glass timeline">
+<div class="skills">
 
-<div>
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">Python</span>
+<span class="skill">Git</span>
+<span class="skill">UI / UX</span>
+<span class="skill">Réseaux</span>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3 class="counter" data-target="10">0</h3>
+<p>Projets réalisés</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="5">0</h3>
+<p>Technologies maîtrisées</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="100">0</h3>
+<p>% Motivation</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="parcours">
+
+<div class="container">
+
+<h2 class="section-title">
+Parcours Académique
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-content">
 <h3>BEPC — 2022</h3>
-<p>Obtention du diplôme</p>
+<p>Obtention du diplôme.</p>
+</div>
 </div>
 
-<div>
+<div class="timeline-item">
+<div class="timeline-content">
 <h3>Probatoire — 2024</h3>
-<p>Cycle secondaire supérieur</p>
+<p>Cycle secondaire supérieur.</p>
+</div>
 </div>
 
-<div>
+<div class="timeline-item">
+<div class="timeline-content">
 <h3>Baccalauréat — 2025</h3>
-<p>Validation du BAC</p>
+<p>Validation du BAC.</p>
+</div>
 </div>
 
-<div>
-<h3>IUT Première Année — 2026</h3>
-<p>Formation informatique</p>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>IUT — 2026</h3>
+<p>Première année en informatique.</p>
+</div>
 </div>
 
 </div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2>Technologies</h2>
-
-<span class="badge">HTML</span>
-<span class="badge">CSS</span>
-<span class="badge">JavaScript</span>
-<span class="badge">Python</span>
-<span class="badge">Git</span>
-<span class="badge">UI / UX</span>
-<span class="badge">Réseaux</span>
 
 </div>
 
 </section>
 
-<section>
+<section id="projects">
 
 <div class="container">
 
-<h2>Mes Projets</h2>
+<h2 class="section-title">
+Mes Projets
+</h2>
 
-<div class="grid" id="projectsContainer">
+<div class="projects-grid">
 
-<div class="card">
+<div class="project-card">
+
+<img src="https://picsum.photos/600/400?1">
+
+<div class="project-content">
 
 <h3>Portfolio Personnel</h3>
 
-<p>Portfolio responsive moderne.</p>
+<p>
+Portfolio moderne responsive.
+</p>
+
+<div class="project-links">
+
+<a class="btn btn-primary" href="#">
+Démo
+</a>
+
+<a class="btn btn-secondary" href="#">
+Code
+</a>
 
 </div>
 
-</div><div class="glass">
+</div>
 
-<h3>Ajouter un Projet</h3>
+</div><div class="project-card">
 
-<input id="projectTitle" placeholder="Titre">
+<img src="https://picsum.photos/600/400?2">
 
-<input id="projectImage" placeholder="Lien image">
+<div class="project-content">
 
-<input id="projectDemo" placeholder="Lien démo">
+<h3>Application Web</h3>
 
-<input id="projectCode" placeholder="Lien code">
+<p>
+Application moderne développée avec les technologies web récentes.
+</p>
 
-<textarea id="projectDesc"
-placeholder="Description"></textarea>
+<div class="project-links">
 
-<button onclick="addProject()">
-Ajouter Projet
-</button>
+<a class="btn btn-primary" href="#">
+Démo
+</a>
+
+<a class="btn btn-secondary" href="#">
+Code
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="https://picsum.photos/600/400?3">
+
+<div class="project-content">
+
+<h3>Projet Réseau</h3>
+
+<p>
+Configuration et sécurisation d'une infrastructure réseau.
+</p>
+
+<div class="project-links">
+
+<a class="btn btn-primary" href="#">
+Démo
+</a>
+
+<a class="btn btn-secondary" href="#">
+Documentation
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -434,17 +727,36 @@ Ajouter Projet
 
 </section>
 
-<section>
+<section id="contact">
 
 <div class="container">
 
+<h2 class="section-title">
+Contact
+</h2>
+
 <div class="glass">
 
-<h2>Contact</h2>
+<div class="contact-grid">
 
-<p>📧 kamgaphanuel@gmail.com</p>
+<div class="contact-info">
 
-<p>📱 WhatsApp : 673936110</p>
+<h3>Restons en contact</h3>
+
+<p>📧 Email : kamgaphanuel@gmail.com</p>
+
+<p>📱 WhatsApp : +237 673936110</p>
+
+<p>📍 Cameroun</p>
+
+<p>
+Disponible pour collaborations,
+projets web et échanges professionnels.
+</p>
+
+</div>
+
+<div>
 
 <input id="nom" placeholder="Nom">
 
@@ -453,15 +765,21 @@ Ajouter Projet
 <input id="mail" placeholder="Email">
 
 <textarea id="raison"
-placeholder="Pourquoi m'écrivez-vous ?"></textarea>
+placeholder="Votre message"></textarea>
 
-<button onclick="sendMail()">
-Envoyer Mail
-</button>
+<a href="#" class="btn btn-primary"
+onclick="sendMail()">
+Envoyer un email
+</a>
 
-<button onclick="sendWhatsapp()">
-Envoyer WhatsApp
-</button>
+<a href="#" class="btn btn-secondary"
+onclick="sendWhatsapp()">
+WhatsApp
+</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -479,77 +797,82 @@ Envoyer WhatsApp
 
 <script>
 
-function addProject(){
+/* Loader */
 
-const title =
-document.getElementById(
-"projectTitle"
-).value;
+window.addEventListener("load",()=>{
 
-if(!title){
+setTimeout(()=>{
 
-alert(
-"Ajoute un titre"
-);
+document.querySelector(".loader").style.display="none";
 
-return;
+},1200);
+
+});
+
+/* Machine à écrire */
+
+const text =
+"Étudiant • Développeur • Passionné d'informatique";
+
+const typing =
+document.getElementById("typing");
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < text.length){
+
+typing.innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,60);
+
+}
 
 }
 
-document
-.getElementById(
-"projectsContainer"
-)
+typeWriter();
 
-.innerHTML += `
+/* Compteurs */
 
-<div class="card">
+const counters =
+document.querySelectorAll(".counter");
 
-<img class="project-img"
-src="${projectImage.value || 'https://picsum.photos/400'}">
+counters.forEach(counter=>{
 
-<h3>
-${projectTitle.value}
-</h3>
+const updateCounter=()=>{
 
-<p>
-${projectDesc.value}
-</p>
+const target=
++counter.getAttribute("data-target");
 
-<a href="${projectDemo.value}" target="_blank">
-Démo
-</a>
+const count=
++counter.innerText;
 
-<br>
+const increment=
+target/100;
 
-<a href="${projectCode.value}" target="_blank">
-Code Source
-</a>
+if(count < target){
 
-<br><br>
+counter.innerText=
+Math.ceil(count+increment);
 
-<button onclick="this.parentElement.remove()">
-Supprimer
-</button>
+setTimeout(updateCounter,20);
 
-</div>
+}else{
 
-`;
-
-[
-projectTitle,
-projectImage,
-projectDemo,
-projectCode,
-projectDesc
-
-].forEach(
-
-e => e.value = ""
-
-);
+counter.innerText=target;
 
 }
+
+};
+
+updateCounter();
+
+});
+
+/* Mail */
 
 function sendMail(){
 
@@ -568,10 +891,11 @@ ${raison.value}
 `;
 
 window.location.href =
-
 `mailto:kamgaphanuel@gmail.com?subject=Portfolio&body=${encodeURIComponent(body)}`;
 
 }
+
+/* WhatsApp */
 
 function sendWhatsapp(){
 
@@ -590,40 +914,98 @@ ${raison.value}
 `;
 
 window.open(
-
 `https://wa.me/237673936110?text=${encodeURIComponent(msg)}`
-
 );
 
 }
 
-/* Effet machine à écrire */
+/* Particules */
 
-const text =
-"Étudiant • Développeur • Passionné d'informatique";
+const canvas =
+document.getElementById("particles");
 
-const target =
-document.querySelector(".hero p");
+const ctx =
+canvas.getContext("2d");
 
-target.innerHTML = "";
+canvas.width =
+window.innerWidth;
 
-let i = 0;
+canvas.height =
+window.innerHeight;
 
-function typeWriter(){
+let particles=[];
 
-if(i < text.length){
+for(let i=0;i<120;i++){
 
-target.innerHTML += text.charAt(i);
+particles.push({
 
-i++;
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)
 
-setTimeout(typeWriter, 60);
+});
 
 }
 
+function animate(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.arc(
+p.x,
+p.y,
+p.r,
+0,
+Math.PI*2
+);
+
+ctx.fillStyle=
+"rgba(34,197,94,.7)";
+
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)
+p.dx*=-1;
+
+if(p.y<0||p.y>canvas.height)
+p.dy*=-1;
+
+});
+
+requestAnimationFrame(
+animate
+);
+
 }
 
-typeWriter();
+animate();
+
+window.addEventListener(
+"resize",
+()=>{
+
+canvas.width=
+window.innerWidth;
+
+canvas.height=
+window.innerHeight;
+
+}
+);
 
 </script>
 
