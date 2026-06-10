@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Nkounga Kamga Phanuel Victor | Portfolio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 :root{
 --bg:#050505;
 --card:#0d0d0d;
@@ -13,95 +19,53 @@
 --green:#22c55e;
 --text:#ffffff;
 }
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
+
 html{
 scroll-behavior:smooth;
 }
+
 body{
 background:var(--bg);
 color:var(--text);
 line-height:1.7;
 overflow-x:hidden;
 }
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 20%, rgba(34,197,94,.15), transparent 25%),
-radial-gradient(circle at 80% 60%, rgba(34,197,94,.10), transparent 25%),
-radial-gradient(circle at 50% 90%, rgba(34,197,94,.08), transparent 25%);
-animation:bgMove 15s infinite alternate;
-pointer-events:none;
-z-index:-1;
-}
-@keyframes bgMove{
-from{transform:translateY(-30px);}
-to{transform:translateY(30px);}
-}
+
 .container{
 width:min(1200px,92%);
 margin:auto;
 }
+
 section{
 padding:90px 0;
-animation:fadeUp 1s ease;
 }
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(50px);}
-to{opacity:1;transform:translateY(0);}
-}
-section::after{
-content:"";
-display:block;
-width:120px;
-height:3px;
-background:#22c55e;
-margin:30px auto 0;
-box-shadow:0 0 15px #22c55e;
-}
+
 .hero{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+
 background:
 linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.85)),
 url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+
 background-size:cover;
 background-position:center;
 }
-.hero-content{
-animation:float 5s ease-in-out infinite;
-}
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
-}
-h1{
-background:linear-gradient(90deg,#22c55e,#ffffff,#22c55e);
-background-size:300%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:shine 6s linear infinite;
-}
-@keyframes shine{
-0%{background-position:0%;}
-100%{background-position:300%;}
+
 .highlight{
 color:var(--green);
-text-shadow:0 0 10px #22c55e,0 0 20px #22c55e,0 0 40px #22c55e;
 }
+
 .glass{
 background:var(--glass);
 padding:35px;
@@ -109,58 +73,43 @@ border-radius:20px;
 backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,.08);
 }
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
+
 .card{
 background:var(--card);
 padding:25px;
 border-radius:20px;
 transition:.3s;
-position:relative;
-overflow:hidden;
 }
+
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 0 20px rgba(34,197,94,.2);
 }
-.card::before{
-content:"";
-position:absolute;
-top:-100%;
-left:-100%;
-width:200%;
-height:200%;
-background:linear-gradient(45deg,transparent,rgba(255,255,255,.08),transparent);
-transform:rotate(45deg);
-transition:.8s;
-}
-.card:hover::before{
-top:100%;
-left:100%;
-}
+
 .timeline{
 border-left:3px solid var(--green);
 padding-left:25px;
 }
+
 .timeline div{
 margin-bottom:25px;
 }
+
 .badge{
 display:inline-block;
 padding:10px 16px;
 margin:5px;
 border-radius:999px;
 background:#151515;
-transition:.3s;
 }
-.badge:hover{
-transform:scale(1.1);
-background:#22c55e;
-}
-input,textarea{
+
+input,
+textarea{
 width:100%;
 padding:14px;
 margin-top:12px;
@@ -169,10 +118,7 @@ border-radius:12px;
 background:#121212;
 color:white;
 }
-input:focus,textarea:focus{
-outline:none;
-box-shadow:0 0 15px #22c55e;
-}
+
 button{
 padding:14px 20px;
 border:none;
@@ -181,12 +127,8 @@ background:var(--green);
 color:white;
 cursor:pointer;
 margin-top:10px;
-transition:.3s;
 }
-button:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 0 20px #22c55e;
-}
+
 .project-img{
 width:100%;
 height:180px;
@@ -194,58 +136,123 @@ object-fit:cover;
 border-radius:12px;
 margin-bottom:15px;
 }
+
 footer{
 padding:40px;
 text-align:center;
 border-top:1px solid rgba(255,255,255,.08);
 }
-::-webkit-scrollbar{
-width:10px;
-}
-::-webkit-scrollbar-track{
-background:#080808;
-}
-::-webkit-scrollbar-thumb{
-background:#22c55e;
-border-radius:20px;
-}
+
 </style>
+
 </head>
+
 <body>
+
 <header class="hero">
-<div class="hero-content">
+
+<div>
+
 <h1>
+
 Nkounga Kamga
-<span class="highlight">Phanuel Victor</span>
+
+<span class="highlight">
+
+Phanuel Victor
+
+</span>
+
 </h1>
-<p>Étudiant • Développeur • Passionné d'informatique</p>
+
+<p>
+
+Étudiant • Développeur • Passionné d'informatique
+
+</p>
+
 </div>
+
 </header>
 
+
 <section>
+
 <div class="container">
+
 <div class="glass">
+
 <h2>Présentation</h2>
-<p>Je suis passionné par les technologies, le développement web, les réseaux informatiques et les solutions numériques modernes.</p>
+
+<p>
+
+Je suis passionné par les technologies,
+le développement web,
+les réseaux informatiques
+et les solutions numériques modernes.
+
+</p>
+
 </div>
+
 </div>
+
 </section>
 
+
 <section>
+
 <div class="container">
+
 <h2>Parcours Académique</h2>
+
 <div class="glass timeline">
-<div><h3>BEPC — 2022</h3><p>Obtention du diplôme</p></div>
-<div><h3>Probatoire — 2024</h3><p>Cycle secondaire supérieur</p></div>
-<div><h3>Baccalauréat — 2025</h3><p>Validation du BAC</p></div>
-<div><h3>IUT Première Année — 2026</h3><p>Formation informatique</p></div>
+
+<div>
+
+<h3>BEPC — 2022</h3>
+
+<p>Obtention du diplôme</p>
+
 </div>
+
+<div>
+
+<h3>Probatoire — 2024</h3>
+
+<p>Cycle secondaire supérieur</p>
+
 </div>
+
+<div>
+
+<h3>Baccalauréat — 2025</h3>
+
+<p>Validation du BAC</p>
+
+</div>
+
+<div>
+
+<h3>IUT Première Année — 2026</h3>
+
+<p>Formation informatique</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+
 <section>
+
 <div class="container">
+
 <h2>Technologies</h2>
+
 <span class="badge">HTML</span>
 <span class="badge">CSS</span>
 <span class="badge">JavaScript</span>
@@ -253,105 +260,250 @@ Nkounga Kamga
 <span class="badge">Git</span>
 <span class="badge">UI / UX</span>
 <span class="badge">Réseaux</span>
+
 </div>
+
 </section>
 
+
 <section>
+
 <div class="container">
+
 <h2>Mes Projets</h2>
+
 <div class="grid" id="projectsContainer">
+
 <div class="card">
+
 <h3>Portfolio Personnel</h3>
+
 <p>Portfolio responsive moderne.</p>
+
 </div>
+
 </div>
+
 <div class="glass">
+
 <h3>Ajouter un Projet</h3>
+
 <input id="projectTitle" placeholder="Titre">
+
 <input id="projectImage" placeholder="Lien image">
+
 <input id="projectDemo" placeholder="Lien démo">
+
 <input id="projectCode" placeholder="Lien code">
-<textarea id="projectDesc" placeholder="Description"></textarea>
-<button onclick="addProject()">Ajouter Projet</button>
+
+<textarea id="projectDesc"
+placeholder="Description">
+
+</textarea>
+
+<button onclick="addProject()">
+
+Ajouter Projet
+
+</button>
+
 </div>
+
 </div>
+
 </section>
 
+
 <section>
+
 <div class="container">
+
 <div class="glass">
+
 <h2>Contact</h2>
+
 <p>📧 kamgaphanuel@gmail.com</p>
+
 <p>📱 WhatsApp : 673936110</p>
+
 <input id="nom" placeholder="Nom">
+
 <input id="prenom" placeholder="Prénom">
+
 <input id="mail" placeholder="Email">
-<textarea id="raison" placeholder="Pourquoi m'écrivez-vous ?"></textarea>
-<button onclick="sendMail()">Envoyer Mail</button>
-<button onclick="sendWhatsapp()">Envoyer WhatsApp</button>
+
+<textarea id="raison"
+placeholder="Pourquoi m'écrivez-vous ?">
+
+</textarea>
+
+<button onclick="sendMail()">
+
+Envoyer Mail
+
+</button>
+
+<button onclick="sendWhatsapp()">
+
+Envoyer WhatsApp
+
+</button>
+
 </div>
+
 </div>
+
 </section>
+
 
 <footer>
-<p>© 2026 Nkounga Kamga Phanuel Victor</p>
+
+<p>
+
+© 2026 Nkounga Kamga Phanuel Victor
+
+</p>
+
 </footer>
 
+
 <script>
+
 function addProject(){
-const title = document.getElementById("projectTitle").value;
-const image = document.getElementById("projectImage").value;
-const demo = document.getElementById("projectDemo").value;
-const code = document.getElementById("projectCode").value;
-const desc = document.getElementById("projectDesc").value;
+
+const title =
+document.getElementById(
+"projectTitle"
+).value;
 
 if(!title){
-alert("Ajoute un titre");
+
+alert(
+"Ajoute un titre"
+);
+
 return;
+
 }
 
-document.getElementById("projectsContainer").innerHTML += `
+document
+.getElementById(
+"projectsContainer"
+)
+
+.innerHTML += `
+
 <div class="card">
-<img class="project-img" src="${image || 'https://picsum.photos/400'}">
-<h3>${title}</h3>
-<p>${desc}</p>
-<a href="${demo}" target="_blank">Démo</a><br>
-<a href="${code}" target="_blank">Code Source</a><br><br>
-<button onclick="this.parentElement.remove()">Supprimer</button>
+
+<img class="project-img"
+
+src="${projectImage.value || 'https://picsum.photos/400'}">
+
+<h3>
+
+${projectTitle.value}
+
+</h3>
+
+<p>
+
+${projectDesc.value}
+
+</p>
+
+<a href="${projectDemo.value}" target="_blank">
+
+Démo
+
+</a>
+
+<br>
+
+<a href="${projectCode.value}" target="_blank">
+
+Code Source
+
+</a>
+
+<br><br>
+
+<button onclick="this.parentElement.remove()">
+
+Supprimer
+
+</button>
+
 </div>
+
 `;
 
-[title,image,demo,code,desc].forEach(() => {
-document.getElementById("projectTitle").value = "";
-document.getElementById("projectImage").value = "";
-document.getElementById("projectDemo").value = "";
-document.getElementById("projectCode").value = "";
-document.getElementById("projectDesc").value = "";
-});
+[
+projectTitle,
+projectImage,
+projectDemo,
+projectCode,
+projectDesc
+
+].forEach(
+
+e=>e.value=""
+
+);
+
 }
+
 
 function sendMail(){
-const body = `Nom : ${nom.value}\nPrénom : ${prenom.value}\nEmail : ${mail.value}\nMessage :\n${raison.value}`;
-window.location.href = `mailto:kamgaphanuel@gmail.com?subject=Portfolio&body=${encodeURIComponent(body)}`;
+
+const body =
+
+`
+Nom : ${nom.value}
+
+Prénom : ${prenom.value}
+
+Email : ${mail.value}
+
+Message :
+
+${raison.value}
+
+`;
+
+window.location.href =
+
+`mailto:kamgaphanuel@gmail.com?subject=Portfolio&body=${encodeURIComponent(body)}`;
+
 }
+
 
 function sendWhatsapp(){
-const msg = `Nom : ${nom.value}\nPrénom : ${prenom.value}\nEmail : ${mail.value}\nMessage :\n${raison.value}`;
-window.open(`https://wa.me/237673936110?text=${encodeURIComponent(msg)}`);
+
+const msg =
+
+`
+Nom : ${nom.value}
+
+Prénom : ${prenom.value}
+
+Email : ${mail.value}
+
+Message :
+
+${raison.value}
+
+`;
+
+window.open(
+
+`https://wa.me/237673936110?text=${encodeURIComponent(msg)}`
+
+);
+
 }
 
-// Effet machine à écrire
-const text = "Étudiant • Développeur • Passionné d'informatique";
-const target = document.querySelector(".hero p");
-target.innerHTML = "";
-let i = 0;
-function typeWriter(){
-if(i < text.length){
-target.innerHTML += text.charAt(i);
-i++;
-setTimeout(typeWriter, 60);
-}
-typeWriter();
 </script>
+
 </body>
+
 </html>
